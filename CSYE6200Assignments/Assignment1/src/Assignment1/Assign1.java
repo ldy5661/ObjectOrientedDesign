@@ -14,19 +14,30 @@ import java.util.Scanner;
 * @author Dongyue Li
 */
 public class Assign1 {
+// both readLine() and Scanner work well.    
+//    static String readLine() throws java.io.IOException {
+//        String retStr = "";
+//        char inChar;
+//        while ( (inChar = (char) System.in.read()) >= ' ') { // Let's take anything greater than an ASCII space (32)
+//            retStr = retStr + inChar; // Add each character to our String
+//        }
+//        return retStr; // OK, we're done. Return the input string
+//    }
     public static void main(String[] args) throws java.io.IOException {
-        String accounts[][] = {  {"dongyueli", "1575", "12000.00"},  {"ldy", "7721", "500.00"},  {"dyl",  "3884", "700.00"}};
+        String accounts[][] = {  {"dongyueli", "1575", "12000.00"},  {"ldy", "7721", "300.00"},  {"dyl",  "3884", "700.00"}};
 
         Scanner sc = new Scanner(System.in);        
         boolean authorized = false;
         String authorizedUser = null;
         int authorizedUserIndex = -1;
         while(authorized == false){
-            System.out.println("Please enter username: ");
+            System.out.println("Please Enter Username: ");
             String user = sc.nextLine();
-            System.out.println("Please enter password: ");
+//        String user = readLine();
+            System.out.println("Please Enter PIN Number: ");
             try{
                 String passStr = sc.nextLine();
+//                String passStr = readLine();
                 int pass = Integer.parseInt(passStr);
                 
                 for(int i = 0; i < accounts.length; i++){
@@ -38,10 +49,10 @@ public class Assign1 {
                     }
                 }
                 if(authorized == false){
-                    System.out.println("Wrong User Name or password. Try again: ");
+                    System.out.println("Wrong Username or PIN Number. Try again: ");
                 }
             }catch(Exception e){
-                System.out.println("Number Only!");
+                System.out.println("PIN Should be Number Only!");
             }
         }
         
@@ -50,6 +61,7 @@ public class Assign1 {
             do {
                 System.out.println("Welcome " + authorizedUser +" Please enter 1 for account balance, 2 for Obtain cash, 3 for quit");                
                 inChar = sc.nextLine();
+//                inChar = readLine();
                 if(inChar.equals("1") || inChar.equals("2") || inChar.equals("3")){
                     switch(inChar){
                         case "1": System.out.println("You have: " + accounts[authorizedUserIndex][2] + " dollars");
@@ -60,8 +72,13 @@ public class Assign1 {
                             while(!validInput) {
                                 try{
                                     int amount = Integer.parseInt(sc.nextLine());
+//                                    int amount = Integer.parseInt(readLine());
                                     int amountWithDraw = amount;
-                                    if(amount > Double.parseDouble(accounts[authorizedUserIndex][2]) || amount > 200){
+                                    if(amount > Double.parseDouble(accounts[authorizedUserIndex][2])){
+                                        System.out.println("Amount cannot greater than your balance! Please Enter Again !");
+                                        continue;
+                                    }
+                                    if(amount > 200){
                                         System.out.println("Amount cannot greater than 200 for one transection! Please Enter Again !");
                                         continue;
                                     }
