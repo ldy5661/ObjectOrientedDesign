@@ -7,9 +7,10 @@ package edu.neu.csye6200.cacrystal;
 
 /**
  *
- * @author dongyueli
- */
+ * NUID: 001632075
+ * @author Dongyue Li
+*/
 public interface CARuleI {
-    public CAFlake initFlake(int flakeSize);
-    public CAFlake generateNextFlake(int flakeSize, CAFlake current);
+    public CAFlake initFlake(int flakeSize, double heat);
+    public CAFlake generateNextFlake(CAFlake current);
 }
