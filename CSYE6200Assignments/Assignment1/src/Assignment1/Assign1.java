@@ -26,7 +26,7 @@ public class Assign1 {
     public static void main(String[] args) throws java.io.IOException {
         String accounts[][] = {  {"dongyueli", "1575", "12000.00"},  {"ldy", "7721", "300.00"},  {"dyl",  "3884", "700.00"}};
 
-        Scanner sc = new Scanner(System.in); 
+        Scanner sc = new Scanner(System.in); ////ldy
         boolean authorized = false;
         String authorizedUser = null;
         int authorizedUserIndex = -1;
