@@ -5,4 +5,3 @@
 ## 4. The Assignemt4 is to use Singleton pattern, add sort method, add log info and use FileHandler to save log messages into disk.
 ## 5. The Assignemt5 is to design 2D Cellular Automaton -- Crystal Generation. Simulation of Snowflake by Cellular Automaton. Patterns produced by two-dimentional cellular automata set up to mimic the growth of crystals.
 ## 6. The Assignemt6 is to create User Interface for Assignment5 and to dynamically draw snowflakes on canvas.
-## 7
